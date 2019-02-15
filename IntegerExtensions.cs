@@ -7,7 +7,22 @@ namespace PadawansTask3
         public static int Gcd(int a, int b)
         {
             // put your code here
-            throw new NotImplementedException();
+
+            //throw new NotImplementedException();
+            int znak = a / Math.Abs(a);
+            int znak1 = b / Math.Abs(b);
+            a = Math.Abs(a);
+            b = Math.Abs(b);
+            while (a != 0 && b != 0)
+                if (a > b)
+                    a = a % b;
+                else
+                    b = b % a;
+            if (a != 0)
+                return znak*a;
+            else
+                return znak1*b;
+
         }
     }
 }
